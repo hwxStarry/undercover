@@ -15,7 +15,7 @@ function importLibrary() {
   const raw = $("#importTextarea").value.trim();
   const statusEl = $("#importStatus");
   if (!raw) {
-    statusEl.textContent = "请粘贴 JSON 格式词库";
+    statusEl.textContent = t('import.errorEmpty');
     statusEl.className = "status-msg error";
     return;
   }
@@ -28,7 +28,7 @@ function importLibrary() {
     } else if (data.groups && Array.isArray(data.groups)) {
       groups = data.groups;
     } else {
-      throw new Error("格式错误");
+      throw new Error(t('import.errorFormat'));
     }
 
     // 验证
@@ -43,23 +43,23 @@ function importLibrary() {
     }));
 
     if (valid.length === 0) {
-      throw new Error("没有有效的词组");
+      throw new Error(t('import.errorNoValid'));
     }
 
     wordLibrary = valid;
     saveLibrary();
-    statusEl.textContent = `成功导入 ${valid.length} 组词库！`;
+    statusEl.textContent = t('import.success', {0: valid.length});
     statusEl.className = "status-msg success";
     updateStats();
     setTimeout(hideImportModal, 1200);
   } catch (e) {
-    statusEl.textContent = `导入失败：${e.message}`;
+    statusEl.textContent = t('import.errorFail', {0: e.message});
     statusEl.className = "status-msg error";
   }
 }
 
 function resetLibrary() {
-  if (confirm("确定要重置为默认词库吗？所有编辑和导入的词库将丢失。")) {
+  if (confirm(t('reset.confirm'))) {
     wordLibrary = JSON.parse(JSON.stringify(DEFAULT_LIBRARY));
     localStorage.removeItem("wordCardLibrary");
     localStorage.removeItem("wordCardCategorySelections");
@@ -96,12 +96,13 @@ function renderEditTable(filter = "") {
       })
     : wordLibrary;
 
-  $("#editCount").textContent = `显示 ${filtered.length} / ${wordLibrary.length} 组`;
+  $("#editCount").textContent = t('edit.showCount', {0: filtered.length, 1: wordLibrary.length});
 
   tbody.innerHTML = filtered.map((g) => {
     const origIdx = wordLibrary.indexOf(g);
     const variants = g.variants.join(", ");
-    const cat = g.category || "未分类";
+    const rawCat = g.category || "未分类";
+    const cat = rawCat === "未分类" ? t('common.uncategorized') : rawCat;
     return `<tr>
       <td class="td-num">${origIdx + 1}</td>
       <td class="td-base">${escapeHtml(g.base)}</td>
@@ -136,12 +137,12 @@ function showEditRowModal(idx = -1) {
   $("#categoryList").innerHTML = cats.map(c => `<option value="${escapeHtml(c)}">`).join("");
 
   if (idx >= 0) {
-    $("#editRowTitle").textContent = "编辑词组";
+    $("#editRowTitle").textContent = t('editRow.editTitle');
     $("#editRowBase").value = wordLibrary[idx].base;
     $("#editRowVariants").value = wordLibrary[idx].variants.join(", ");
     $("#editRowCategory").value = wordLibrary[idx].category || "未分类";
   } else {
-    $("#editRowTitle").textContent = "添加词组";
+    $("#editRowTitle").textContent = t('editRow.title');
     $("#editRowBase").value = "";
     $("#editRowVariants").value = "";
     $("#editRowCategory").value = "未分类";
@@ -162,19 +163,19 @@ function confirmEditRow() {
   const statusEl = $("#editRowStatus");
 
   if (!base) {
-    statusEl.textContent = "请输入基准词";
+    statusEl.textContent = t('editRow.errorBase');
     statusEl.className = "status-msg error";
     return;
   }
   if (!variantsRaw) {
-    statusEl.textContent = "请输入至少一个变体词";
+    statusEl.textContent = t('editRow.errorVariants');
     statusEl.className = "status-msg error";
     return;
   }
 
   const variants = variantsRaw.split(/[,，\s]+/).filter(v => v.length > 0);
   if (variants.length === 0) {
-    statusEl.textContent = "请输入至少一个变体词";
+    statusEl.textContent = t('editRow.errorVariants');
     statusEl.className = "status-msg error";
     return;
   }
@@ -190,14 +191,14 @@ function confirmEditRow() {
 }
 
 function deleteGroup(idx) {
-  if (!confirm(`确定要删除词组「${wordLibrary[idx].base}」吗？`)) return;
+  if (!confirm(t('edit.deleteConfirm', {0: wordLibrary[idx].base}))) return;
   wordLibrary.splice(idx, 1);
   renderEditTable($("#editSearch").value);
 }
 
 function saveEditLibrary() {
   saveLibrary();
-  $("#editStatus").textContent = "词库已保存！";
+  $("#editStatus").textContent = t('edit.saveSuccess');
   $("#editStatus").className = "status-msg success";
   setTimeout(() => { $("#editStatus").textContent = ""; }, 2000);
 }
