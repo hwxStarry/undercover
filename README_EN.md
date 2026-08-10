@@ -1,8 +1,10 @@
 [中文](README.md) | English
 
-# Undercover · Word Card Random Generator
+# Undercover Word Card Generator — Printable Party Game Cards, No Install
 
-A pure static word card generator for the "Undercover" (谁是卧底) party game. Built-in 741 semantically similar word groups across 55 categories. Generate each player's card with one click, print preview included — ready to play.
+🎴 A free word card generator for the "Undercover" (谁是卧底) / Spy party game. Pure static web app with 741 semantic word groups across 55 categories. Supports 3–10 players. One-click printable player cards and host cards.
+
+> 🚀 Live Demo: [hwxstarry.github.io/undercover](https://hwxstarry.github.io/undercover/)
 
 ## Features
 
