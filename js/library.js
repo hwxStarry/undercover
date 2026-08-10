@@ -1,5 +1,4 @@
-const DEFAULT_LIBRARY = [
-
+var DEFAULT_LIBRARY = [
   // === 水果 (30) ===
   { base: "苹果", variants: ["香蕉", "葡萄", "橘子", "梨", "桃子"] , category: "水果" },
   { base: "草莓", variants: ["樱桃", "蓝莓", "桑葚", "树莓", "杨梅"] , category: "水果" },
@@ -899,5 +898,3 @@ const DEFAULT_LIBRARY = [
   { base: "七巧板", variants: ["四巧板", "五巧板", "九连环", "鲁班锁"], category: "棋牌桌游" },
 
 ];
-
-export default DEFAULT_LIBRARY;
