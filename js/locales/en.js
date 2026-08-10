@@ -29,11 +29,11 @@ registerLocale('en', {
       "50": "50 Words",
       "100": "100 Words"
     },
-    "style": {
+    "styles": {
       "red": "Red Dashed",
       "simple": "Simple Black"
     },
-    "fontSize": {
+    "fontSizes": {
       "small": "Small",
       "medium": "Medium",
       "large": "Large"

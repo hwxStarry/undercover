@@ -29,11 +29,11 @@ registerLocale('zh-CN', {
       "50": "50词",
       "100": "100词"
     },
-    "style": {
+    "styles": {
       "red": "中国红虚线",
       "simple": "简约黑线"
     },
-    "fontSize": {
+    "fontSizes": {
       "small": "小号",
       "medium": "中号",
       "large": "大号"
