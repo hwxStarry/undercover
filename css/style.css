@@ -29,10 +29,25 @@
     box-shadow: 0 2px 8px rgba(192,57,43,0.25);
   }
 
-  .lang-switcher {
+  .header-actions {
     position: absolute;
     top: 12px;
     right: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .header-github {
+    color: #fff;
+    opacity: 0.85;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s;
+  }
+  .header-github:hover {
+    opacity: 1;
+  }
+  .lang-switcher {
     background: rgba(255,255,255,0.2);
     color: #fff;
     border: 1px solid rgba(255,255,255,0.4);
