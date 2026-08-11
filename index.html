@@ -203,7 +203,11 @@
 
 <!-- 51.la 统计 -->
 <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-<script>LA.init({id:"LHdVCXfK1e8Ewesm",ck:"LHdVCXfK1e8Ewesm",autoTrack:true})</script>
+<script>
+  if (window.LA && typeof LA.init === "function") {
+    LA.init({id:"LHdVCXfK1e8Ewesm",ck:"LHdVCXfK1e8Ewesm",autoTrack:true});
+  }
+</script>
 
 </body>
 </html>
