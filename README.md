@@ -4,7 +4,7 @@
 
 🎴 一款免费的「谁是卧底 / 间谍游戏」词语卡片随机生成工具。纯静态网页，内置 741 组语义相近词库、55 个类别，支持 3~10 人。一键生成可打印的玩家卡和主持人卡，即印即玩。
 
-> 🚀 在线使用：[hwxstarry.github.io/undercover](https://hwxstarry.github.io/undercover/)
+> 🚀 在线使用：[undercover.mozhe.cc](https://undercover.mozhe.cc/)
 
 ## 功能特性
 
@@ -48,14 +48,14 @@
 
 项目已包含面向百度和 Google 收录的基础文件：
 
-- `sitemap.xml`：站点地图，地址为 `https://hwxstarry.github.io/undercover/sitemap.xml`
+- `sitemap.xml`：站点地图，地址为 `https://undercover.mozhe.cc/sitemap.xml`
 - `robots.txt`：允许搜索引擎抓取，并声明 sitemap 地址
 - `baidu_urls.txt`：可在百度搜索资源平台做链接提交时使用的 URL 列表
 - `index.html`：已添加 `Baiduspider`、移动适配、sitemap 相关 meta/link 和 `SoftwareApplication` 结构化数据
 
 百度：建议在百度搜索资源平台完成站点验证后，提交 sitemap 或使用“快速收录/链接提交”提交 `baidu_urls.txt` 中的链接。百度官方说明链接提交可以缩短爬虫发现链接的时间，但不保证一定收录。
 
-Google：建议在 Google Search Console 验证站点后，在 Sitemaps 报告中提交 `https://hwxstarry.github.io/undercover/sitemap.xml`；如果只是更新首页，也可以用 URL Inspection 工具请求重新编入索引。Google 官方说明 sitemap 是抓取提示，不保证一定抓取或收录。
+Google：建议在 Google Search Console 验证站点后，在 Sitemaps 报告中提交 `https://undercover.mozhe.cc/sitemap.xml`；如果只是更新首页，也可以用 URL Inspection 工具请求重新编入索引。Google 官方说明 sitemap 是抓取提示，不保证一定抓取或收录。
 
 ### SEO 可行方案
 
@@ -65,6 +65,7 @@ Google：建议在 Google Search Console 验证站点后，在 Sitemaps 报告�
 - 在页面底部增加用户可见的词库说明和常见问题，避免只在 meta 中堆关键词。
 - 增加 `SoftwareApplication` 和 `FAQPage` 结构化数据，帮助搜索引擎理解页面类型和问答内容。
 - 增加 `sitemap.xml`、`robots.txt`、canonical 和移动适配标记。
+- 将 `undercover.mozhe.cc` 设为 canonical 主域名，避免 GitHub Pages 项目路径和自定义域名分散权重。
 
 后续建议：
 
@@ -79,6 +80,7 @@ Google：建议在 Google Search Console 验证站点后，在 Sitemaps 报告�
 
 ```
 ├── index.html              ← 主页面
+├── CNAME                   ← GitHub Pages 自定义域名
 ├── sitemap.xml             ← 搜索引擎站点地图
 ├── robots.txt              ← 搜索引擎抓取规则
 ├── baidu_urls.txt          ← 百度链接提交 URL 列表

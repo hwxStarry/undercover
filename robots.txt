@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hwxstarry.github.io/undercover/sitemap.xml
+Sitemap: https://undercover.mozhe.cc/sitemap.xml

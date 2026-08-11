@@ -4,7 +4,7 @@
 
 🎴 A free word card generator for the "Undercover" (谁是卧底) / Spy party game. Pure static web app with 741 semantic word groups across 55 categories. Supports 3–10 players. One-click printable player cards and host cards.
 
-> 🚀 Live Demo: [hwxstarry.github.io/undercover](https://hwxstarry.github.io/undercover/)
+> 🚀 Live Demo: [undercover.mozhe.cc](https://undercover.mozhe.cc/)
 
 ## Features
 
