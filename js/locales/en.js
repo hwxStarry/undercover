@@ -76,6 +76,24 @@ registerLocale('en', {
 
   "footer": "Word Card Generator · 741 semantic word groups · Edit & Import",
 
+  "seo": {
+    "title": "Undercover Word List and Card Tool",
+    "description": "This undercover word card generator works for party games, classroom activities, team building, family game nights, and icebreakers. It includes 741 semantic word groups across fruit, food, animals, electronics, clothing, household items, and more, with printable player cards, spy words, and host cards.",
+    "faqTitle": "Common Search Questions",
+    "faq1": {
+      "q": "How do I generate undercover word cards?",
+      "a": "Choose the player count, words per card, and categories, then click Generate to create one word card for each player. Games with 4 or more players also get a host card for checking spy words."
+    },
+    "faq2": {
+      "q": "Can I edit the undercover word list?",
+      "a": "Yes. You can add, edit, or delete word groups in the library editor, or import a custom JSON word list."
+    },
+    "faq3": {
+      "q": "Are the spy game cards printable?",
+      "a": "Yes. The page supports printing all player cards and host cards, with small, medium, and large print font sizes."
+    }
+  },
+
   "import": {
     "title": "📥 Import Library",
     "hint": "Paste JSON format library. Each group contains <code>base</code> (base word), <code>variants</code> (variant word array), and <code>category</code> (category).<br>Example: <code>[{\"base\":\"apple\",\"variants\":[\"banana\",\"grape\",\"orange\"],\"category\":\"fruit\"},{\"base\":\"cola\",\"variants\":[\"sprite\",\"fanta\"],\"category\":\"drinks\"}]</code>",

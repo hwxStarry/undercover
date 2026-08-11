@@ -44,10 +44,44 @@
 
 纯静态页面，无构建工具。CSS 和 JS 通过传统 `<link>` / `<script>` 标签引入，改完代码刷新浏览器就能看到效果。
 
+## 搜索引擎收录
+
+项目已包含面向百度和 Google 收录的基础文件：
+
+- `sitemap.xml`：站点地图，地址为 `https://hwxstarry.github.io/undercover/sitemap.xml`
+- `robots.txt`：允许搜索引擎抓取，并声明 sitemap 地址
+- `baidu_urls.txt`：可在百度搜索资源平台做链接提交时使用的 URL 列表
+- `index.html`：已添加 `Baiduspider`、移动适配、sitemap 相关 meta/link 和 `SoftwareApplication` 结构化数据
+
+百度：建议在百度搜索资源平台完成站点验证后，提交 sitemap 或使用“快速收录/链接提交”提交 `baidu_urls.txt` 中的链接。百度官方说明链接提交可以缩短爬虫发现链接的时间，但不保证一定收录。
+
+Google：建议在 Google Search Console 验证站点后，在 Sitemaps 报告中提交 `https://hwxstarry.github.io/undercover/sitemap.xml`；如果只是更新首页，也可以用 URL Inspection 工具请求重新编入索引。Google 官方说明 sitemap 是抓取提示，不保证一定抓取或收录。
+
+### SEO 可行方案
+
+已完成：
+
+- 合理扩展首页标题、描述和关键词覆盖，增加“谁是卧底词库 / 谁是卧底题库 / 卧底词 / 打印卡片”等搜索词。
+- 在页面底部增加用户可见的词库说明和常见问题，避免只在 meta 中堆关键词。
+- 增加 `SoftwareApplication` 和 `FAQPage` 结构化数据，帮助搜索引擎理解页面类型和问答内容。
+- 增加 `sitemap.xml`、`robots.txt`、canonical 和移动适配标记。
+
+后续建议：
+
+- 使用自定义域名或用户主页仓库，让 `robots.txt` 位于域名根目录，例如 `https://example.com/robots.txt`。
+- 在 Google Search Console 和百度搜索资源平台完成站点验证，并提交 sitemap。
+- 增加独立内容页，例如“谁是卧底游戏规则”“谁是卧底词库大全”“聚会游戏打印卡片模板”，每页聚焦一个搜索意图。
+- 为常见类别生成可索引的静态词库页，例如水果词库、动物词库、食物词库，避免只有 JS 动态内容。
+- 增加真实外链入口，例如 README、个人主页、博客文章、社交平台介绍页，提高爬虫发现概率。
+- 保持首页首屏工具可用，避免为了 SEO 增加大段重复文字；Google 明确不使用 `meta keywords`，关键词应自然出现在标题、正文、链接和结构化内容中。
+
 ### 项目结构
 
 ```
 ├── index.html              ← 主页面
+├── sitemap.xml             ← 搜索引擎站点地图
+├── robots.txt              ← 搜索引擎抓取规则
+├── baidu_urls.txt          ← 百度链接提交 URL 列表
 ├── css/
 │   └── style.css           ← 全部样式
 ├── js/
