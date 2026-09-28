@@ -1,8 +1,8 @@
 [中文](README.md) | English
 
-# Undercover Word Card Generator — Printable Party Game Cards, No Install
+# Undercover — Online and Offline Party Game
 
-🎴 A free word card generator for the "Undercover" (谁是卧底) / Spy party game. Pure static web app with 741 semantic word groups across 55 categories. Supports 3–10 players. One-click printable player cards and host cards.
+🎴 The home page offers Online and Offline modes. Online rooms are in development. Offline mode includes the existing word card generator, with 741 semantic word groups across 55 categories, support for 3–10 players, and printable player and host cards.
 
 > 🚀 Live Demo: [undercover.mozhe.cc](https://undercover.mozhe.cc/)
 
@@ -19,7 +19,7 @@
 
 ## Usage
 
-Pure static page — no dependencies. Just double-click `index.html` to open in your browser.
+Pure static page — no dependencies. Just double-click `index.html` to open in your browser. Choose Offline mode for the word card generator. Online mode currently previews the Create Room and Join Room entry points; server functionality is not connected yet.
 
 ### Game Rules
 
@@ -48,12 +48,14 @@ Pure static page, no build tools. CSS and JS are included via traditional `<link
 
 ```
 ├── index.html                  # Current site entry point
-├── css/style.css               # Page styles
+├── css/style.css               # Offline card styles
+├── css/landing.css             # Home and mode entry styles
 ├── js/
 │   ├── library.js              # Word library data
 │   ├── render.js               # Card rendering and printing
 │   ├── edit.js                 # Library editing and import/export
 │   ├── i18n.js                 # Language switching
+│   ├── navigation.js           # Home, online, and offline navigation
 │   ├── locales/                # Chinese and English strings
 │   └── main.js                 # Event bindings and initialization
 ├── CNAME                       # Custom domain
@@ -69,7 +71,7 @@ Keep `index.html`, `css/`, `js/`, and the domain and verification files at the s
 
 | Shortcut | Action |
 |----------|--------|
-| Ctrl + G | Generate cards |
+| Ctrl + G | Generate cards in Offline mode |
 | Esc | Close modal |
 
 ## License

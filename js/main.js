@@ -117,7 +117,7 @@ function bindEvents() {
         hideImportModal();
       }
     }
-    if (e.ctrlKey && e.key === "g") {
+    if (document.body.dataset.view === "offline" && e.ctrlKey && e.key.toLowerCase() === "g") {
       e.preventDefault();
       generateCards();
     }

@@ -80,6 +80,7 @@ function setLanguage(lang) {
   localStorage.setItem('app-lang', lang);
   document.documentElement.lang = lang === 'zh-CN' ? 'zh-CN' : 'en';
   applyTranslations();
+  if (typeof window.renderCurrentView === 'function') window.renderCurrentView();
   // 重新渲染 UI（类别筛选、统计等）
   if (typeof renderCategoryGrid === 'function') renderCategoryGrid();
   if (typeof updateStats === 'function') updateStats();
@@ -159,6 +160,7 @@ function createLangSwitcher() {
 document.addEventListener('DOMContentLoaded', function () {
   initI18n();
   document.documentElement.lang = __lang === 'zh-CN' ? 'zh-CN' : 'en';
-  applyTranslations();
   createLangSwitcher();
+  applyTranslations();
+  if (typeof window.renderCurrentView === 'function') window.renderCurrentView();
 });
