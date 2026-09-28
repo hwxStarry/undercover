@@ -47,17 +47,23 @@ Pure static page, no build tools. CSS and JS are included via traditional `<link
 ### Project Structure
 
 ```
-├── index.html              ← Main page
-├── css/
-│   └── style.css           ← All styles
+├── index.html                  # Current site entry point
+├── css/style.css               # Page styles
 ├── js/
-│   ├── library.js          ← Word library data (741 groups)
-│   ├── render.js           ← Card rendering, printing, category filtering
-│   ├── edit.js             ← Library editing, import, reset
-│   └── main.js             ← Event binding, initialization
-├── word-card-generator.html ← Original single-file version (backup)
-└── word-cards-a4.html       ← A4 card layout template
+│   ├── library.js              # Word library data
+│   ├── render.js               # Card rendering and printing
+│   ├── edit.js                 # Library editing and import/export
+│   ├── i18n.js                 # Language switching
+│   ├── locales/                # Chinese and English strings
+│   └── main.js                 # Event bindings and initialization
+├── CNAME                       # Custom domain
+├── robots.txt / sitemap.xml    # Search engine entry points
+├── baidu_urls.txt              # Baidu URL submission list
+├── baidu_verify_*.html         # Baidu verification files; keep at site root
+└── google*.html                # Google verification files; keep at site root
 ```
+
+Keep `index.html`, `css/`, `js/`, and the domain and verification files at the site root when deploying.
 
 ### Shortcuts
 

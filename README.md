@@ -79,21 +79,23 @@ Google：建议在 Google Search Console 验证站点后，在 Sitemaps 报告�
 ### 项目结构
 
 ```
-├── index.html              ← 主页面
-├── CNAME                   ← GitHub Pages 自定义域名
-├── sitemap.xml             ← 搜索引擎站点地图
-├── robots.txt              ← 搜索引擎抓取规则
-├── baidu_urls.txt          ← 百度链接提交 URL 列表
-├── css/
-│   └── style.css           ← 全部样式
+├── index.html                  # 当前站点入口
+├── css/style.css               # 页面样式
 ├── js/
-│   ├── library.js          ← 词库数据（741 组）
-│   ├── render.js           ← 卡片渲染、打印、类别筛选
-│   ├── edit.js             ← 词库编辑、导入、重置
-│   └── main.js             ← 事件绑定、初始化
-├── word-card-generator.html ← 原始单文件版本（备份）
-└── word-cards-a4.html       ← A4 卡片排版模板
+│   ├── library.js              # 词库数据
+│   ├── render.js               # 卡片渲染与打印
+│   ├── edit.js                 # 词库编辑与导入导出
+│   ├── i18n.js                 # 多语言切换
+│   ├── locales/                # 中英文文案
+│   └── main.js                 # 事件绑定与初始化
+├── CNAME                       # 自定义域名
+├── robots.txt / sitemap.xml    # 搜索引擎入口
+├── baidu_urls.txt              # 百度链接提交地址
+├── baidu_verify_*.html         # 百度站点验证文件，需保留在根目录
+└── google*.html                # Google 站点验证文件，需保留在根目录
 ```
+
+部署时请保持 `index.html`、`css/`、`js/` 以及根目录的域名和搜索验证文件位置不变。
 
 ### 快捷键
 
