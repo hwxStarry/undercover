@@ -81,6 +81,7 @@ function setLanguage(lang) {
   document.documentElement.lang = lang === 'zh-CN' ? 'zh-CN' : 'en';
   applyTranslations();
   if (typeof window.renderCurrentView === 'function') window.renderCurrentView();
+  if (typeof window.renderOnlineRoom === 'function') window.renderOnlineRoom();
   // 重新渲染 UI（类别筛选、统计等）
   if (typeof renderCategoryGrid === 'function') renderCategoryGrid();
   if (typeof updateStats === 'function') updateStats();

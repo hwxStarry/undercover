@@ -6,6 +6,22 @@ function loadLibrary() {
     if (saved) {
       const parsed = JSON.parse(saved);
       if (Array.isArray(parsed) && parsed.length > 0) {
+        const versionKey = "wordCardLibraryExpansionVersion";
+        const version = "2026-09-28-1";
+        if (localStorage.getItem(versionKey) !== version) {
+          const keys = new Set(parsed.map(g => `${g.category}\0${g.base}`));
+          const oldMatches = LEGACY_DEFAULT_LIBRARY.filter(g => keys.has(`${g.category}\0${g.base}`)).length;
+          if (oldMatches >= Math.ceil(LEGACY_DEFAULT_LIBRARY.length / 2)) {
+            const additions = EXPANDED_LIBRARY.filter(g => !keys.has(`${g.category}\0${g.base}`));
+            if (additions.length) {
+              parsed.push(...additions);
+            }
+          }
+          try {
+            localStorage.setItem("wordCardLibrary", JSON.stringify(parsed));
+            localStorage.setItem(versionKey, version);
+          } catch (_) { /* keep the merged library for this session if storage is full */ }
+        }
         return parsed;
       }
     }
@@ -14,6 +30,7 @@ function loadLibrary() {
 }
 function saveLibrary() {
   localStorage.setItem("wordCardLibrary", JSON.stringify(wordLibrary));
+  localStorage.setItem("wordCardLibraryExpansionVersion", "2026-09-28-1");
   updateStats();
   renderCategoryGrid();
 }
