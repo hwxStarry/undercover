@@ -19,7 +19,7 @@
 
 ## Usage
 
-Offline mode remains a static page that can be opened directly. Online mode requires the mozheAdmin service and an HTTP server for this page. For local testing, run `python3 -m http.server 8099` and open `http://127.0.0.1:8099/#online`. In production, proxy `/undercover/api/v1` to mozheAdmin or set `window.UNDERCOVER_API_BASE` before loading `js/online.js`.
+Offline mode remains a static page that can be opened directly. Online mode requires the mozheAdmin service and an HTTP server for this page. For local testing, run `python3 -m http.server 8099` and open `http://127.0.0.1:8099/#online`. On `undercover.mozhe.cc`, the default API is `https://admin.mozhe.cc/undercover/api/v1`. Other hosted domains use the same-origin `/undercover/api/v1` by default; set `window.UNDERCOVER_API_BASE` before loading `js/online.js` to override it.
 
 Online hosts can make a room public or private. Public rooms appear in the lobby and can be joined without a code; private rooms require a six-character code. Hosts can choose a word category or draw from all categories, and set 1–10 games. Each game has one undercover player among 3–10 players. Players describe in turn, then vote. Ties trigger another vote. Civilians win when the undercover player is eliminated; the undercover player wins at a one-to-one survivor count. After each game, the host starts the next one with new words and a new undercover player.
 

@@ -19,7 +19,7 @@
 
 ## 使用方式
 
-线下玩法仍是纯静态页面，直接打开 `index.html` 即可使用。在线玩法需要同时启动 mozheAdmin 服务端，并通过 HTTP 访问本页面；本地可在仓库根目录执行 `python3 -m http.server 8099`，然后打开 `http://127.0.0.1:8099/#online`。线上部署需把同源 `/undercover/api/v1` 代理到 mozheAdmin，或在加载 `js/online.js` 前配置 `window.UNDERCOVER_API_BASE`。
+线下玩法仍是纯静态页面，直接打开 `index.html` 即可使用。在线玩法需要同时启动 mozheAdmin 服务端，并通过 HTTP 访问本页面；本地可在仓库根目录执行 `python3 -m http.server 8099`，然后打开 `http://127.0.0.1:8099/#online`。`undercover.mozhe.cc` 默认连接 `https://admin.mozhe.cc/undercover/api/v1`；其他线上域名默认使用同源 `/undercover/api/v1`，也可在加载 `js/online.js` 前设置 `window.UNDERCOVER_API_BASE`。
 
 在线建房可选择公开或不公开：公开房间显示在大厅，无需房间码即可加入；不公开房间凭六位房间码加入。房主可选择词库类别或从全部词库随机，并设置 1–10 局。每局 1 名卧底、3–10 人；轮流描述后全员投票，平票重投。卧底出局则平民胜；存活人数到 1 对 1 时卧底胜。单局结束后房主开启下一局，重新发词、选卧底；页面会在当前设备保存玩家凭证，以便刷新后继续游戏。
 

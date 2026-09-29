@@ -2,7 +2,9 @@
   const localHost = ['localhost', '127.0.0.1'].includes(location.hostname) || location.protocol === 'file:';
   const apiRoot = window.UNDERCOVER_API_BASE || (localHost
     ? 'http://127.0.0.1:8100/undercover/api/v1'
-    : '/undercover/api/v1');
+    : location.hostname === 'undercover.mozhe.cc'
+      ? 'https://admin.mozhe.cc/undercover/api/v1'
+      : '/undercover/api/v1');
   const tokenKey = 'undercover-player-token:';
   const nicknameKey = 'undercover-nickname';
   const $ = (id) => document.getElementById(id);
