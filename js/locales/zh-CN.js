@@ -3,6 +3,7 @@ registerLocale('zh-CN', {
     "documentTitle": "谁是卧底怎么玩｜游戏规则、词库与可打印词卡",
     "offlineDocumentTitle": "线下词卡生成 · 谁是卧底",
     "brand": "谁是卧底",
+    "feedback": "反馈",
     "headerNote": "一场词语里的心理战",
     "eyebrow": "THE UNDERCOVER GAME · 谁是卧底",
     "heroTitle": "谁是卧底？<br><em>一句话露破绽。</em>",

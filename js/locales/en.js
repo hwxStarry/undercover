@@ -3,6 +3,7 @@ registerLocale('en', {
     "documentTitle": "Undercover · Play Online or Offline",
     "offlineDocumentTitle": "Printable Word Cards · Undercover",
     "brand": "UNDERCOVER",
+    "feedback": "Feedback",
     "headerNote": "A game of words and suspicion",
     "eyebrow": "THE UNDERCOVER GAME",
     "heroTitle": "Same conversation.<br><em>Different secrets.</em>",

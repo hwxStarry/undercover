@@ -65,6 +65,24 @@ body {
   transform: translateY(-50%);
 }
 
+.site-header .header-feedback {
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+  color: var(--cream);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header .header-feedback:hover,
+.site-header .header-feedback:focus-visible {
+  color: var(--lime);
+  text-decoration: underline;
+}
+
 .site-header .lang-switcher {
   border-color: rgba(245, 238, 225, .32);
   background: rgba(245, 238, 225, .1);
@@ -408,6 +426,7 @@ body {
   .site-header { min-height: 68px; padding: 11px 18px; }
   .site-header-note { display: none; }
   .site-header .header-actions { right: 18px; }
+  .site-header .header-github { display: none; }
   .site-brand { font-size: 17px; }
   .brand-mark { width: 35px; height: 35px; font-size: 24px; }
   .landing-inner, .mode-inner { width: min(100% - 36px, 1240px); }
